@@ -18,7 +18,7 @@ header {
     font-weight: bold;
     margin-bottom: 5px;
     
-    .left .right {
+    .left, .right {
         display: flex;
         width: 50%;
         align-items: center;
@@ -34,10 +34,7 @@ header {
     }
 }
 
-.icon.energy {
-    width: 15px;
-    height: 15px;
-}
+
 
 figure#art {
     margin: 0;
@@ -57,10 +54,14 @@ figure#art {
     }
     
 }
-
+.energy-icon {
+    width: 15px;
+    height: 15px;
+}
 #capacities {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     height: 100px;
 }
 
@@ -88,5 +89,6 @@ figure#art {
     
 }
     .description {
+        margin-top: 5px;
         font-size: smaller;
     }

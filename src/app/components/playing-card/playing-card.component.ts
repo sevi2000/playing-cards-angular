@@ -11,8 +11,12 @@ export class PlayingCardComponent {
 
   @Input(
     {
-      required : true,
-      alias : "my-monster"
+      //required : true,
+      alias : "my-monster",
+      transform : (value:Monster) => {
+        value.hp = value.hp / 2;
+        return value
+      }
 
     }
   ) monster: Monster = new Monster()
