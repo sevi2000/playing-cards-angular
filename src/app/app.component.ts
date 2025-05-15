@@ -16,6 +16,9 @@ export class AppComponent {
   monster1!: Monster;
 
   clickCount :number =0;
+clickCountUpdate() {
+  this.clickCount++;
+}
 
   constructor() {
     this.monster1 = new Monster();
