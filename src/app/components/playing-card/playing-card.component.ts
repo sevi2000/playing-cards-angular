@@ -9,11 +9,5 @@ import { Monster } from '../../models/monster.model';
 })
 export class PlayingCardComponent {
 
-  monster: InputSignal<Monster> = input.required({
-    alias : "my-monster",
-    transform : (value : Monster) => {
-      value.hp = value.hp / 2;
-      return value;
-    }
-  });
+  monster: InputSignal<Monster> = input(new Monster());
 }
