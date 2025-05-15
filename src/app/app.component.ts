@@ -15,6 +15,8 @@ export class AppComponent {
 
   monster1!: Monster;
 
+  clickCount :number =0;
+
   constructor() {
     this.monster1 = new Monster();
     this.monster1.name = "Pik";
