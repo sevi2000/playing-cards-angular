@@ -12,7 +12,7 @@ export class SearchBarComponent {
   @Input() search = "Initial";
   @Output() searchChange = new EventEmitter<string>();
   
-  @Output() searchButtonClicked = new EventEmitter<void>()
+  @Output("submit") searchButtonClicked = new EventEmitter<void>()
   searchClick() {
     this.searchButtonClicked.emit()
 
