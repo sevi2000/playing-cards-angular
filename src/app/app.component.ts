@@ -15,7 +15,8 @@ export class AppComponent {
 
   monster1!: Monster;
 
-  clickCount :number =0;
+  clickCount :number = 0;
+  search: string = '';
 clickCountUpdate() {
   this.clickCount++;
 }
