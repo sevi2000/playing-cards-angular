@@ -14,10 +14,5 @@ export class SearchBarComponent {
   searchButtonClicked = output({alias : "submit"});
   searchClick() {
     this.searchButtonClicked.emit()
-
   }
-  updateSearch(value: string) {
-    this.search.set(value);
-  }
-
 }
