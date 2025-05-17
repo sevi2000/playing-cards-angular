@@ -9,5 +9,5 @@ import { Monster } from '../../models/monster.model';
 })
 export class PlayingCardComponent {
 
-  monster: InputSignal<Monster> = input(new Monster());
+  @Input() monster: Monster = new Monster();
 }
