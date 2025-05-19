@@ -1,5 +1,5 @@
-import { IMonsterProperties, MonsterType, MonsterTypeProperties } from './../../utils/monster.utils';
-import { Component, input, Input, InputSignal, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, computed, input, Input, InputSignal, OnChanges, Signal, SimpleChanges } from '@angular/core';
+import { MonsterTypeProperties, MonsterType, IMonsterProperties } from '../../utils/monster.utils';
 import { Monster } from '../../models/monster.model';
 
 @Component({
@@ -8,23 +8,13 @@ import { Monster } from '../../models/monster.model';
   templateUrl: './playing-card.component.html',
   styleUrl: './playing-card.component.css'
 })
-export class PlayingCardComponent implements OnChanges {
+export class PlayingCardComponent {
 
-  @Input() monster: Monster = new Monster();
-  monsterTypeIcon: string = "assets/type/electric.png"
-  backgroundColor: string = "rgb(255,255,104)";
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if (!changes["monster"]) {
-      return;
-    }
-    let newType: MonsterType = changes["monster"].currentValue.type;
-    let oldType: MonsterType = changes["monster"].previousValue?.type;
-
-    if (newType === oldType) return;
-    const monsterProperties : IMonsterProperties = MonsterTypeProperties[this.monster.type];
-    this.monsterTypeIcon = monsterProperties.imageUrl;
-    console.log(this.monsterTypeIcon);
-    this.backgroundColor = monsterProperties.color;
-  }
+  monster: InputSignal<Monster> = input(new Monster());
+  monsterTypeIcon: Signal<any> = computed(() => {
+    return MonsterTypeProperties[this.monster().type].imageUrl;
+  })
+  backgroundColor:  Signal<any> = computed(() => {
+    return MonsterTypeProperties[this.monster().type].color;
+  })
 }
