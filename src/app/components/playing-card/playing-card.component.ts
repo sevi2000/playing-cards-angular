@@ -10,4 +10,6 @@ import { Monster } from '../../models/monster.model';
 export class PlayingCardComponent {
 
   @Input() monster: Monster = new Monster();
+  monsterTypeIcon: string = "assets/type/electric.png"
+  backgroundColor: string = "rgb(255,255,104";
 }

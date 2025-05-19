@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { PlayingCardComponent } from "./components/playing-card/playing-card.component";
 import { Monster } from './models/monster.model';
 import { SearchBarComponent } from "./components/search-bar/search-bar.component";
+import { MonsterType } from './utils/monster.utils';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ export class AppComponent {
 
   monsters!: Monster[];
   selectedMonsterIndex: number = 0;
+  monsterTypes: MonsterType [] = [MonsterType.ELECTRIC,MonsterType.WATER,MonsterType.PLANT,MonsterType.FIRE]
   monstersNames : string[] = ["Pik" , "Car", "Bulb", "Sala"];
   attacksNames : string[] = ["Thunder Shock" , "Water Gun", "Vine Whip","Scratch"];
   attackStrengths : number[] = [20 , 20, 30, 10];
@@ -26,6 +28,8 @@ export class AppComponent {
     for (let i = 0; i < 4; i++) this.monsters.push(new Monster())
     this.monsters.map((monster: Monster, index: number) => {
       monster.name = this.monstersNames[index];
+      monster.image = `assets/artworks/${this.monstersNames[index].toLowerCase()}.jpg`;
+      monster.type = this.monsterTypes[index];
       monster.hp = 60;
       monster.figureCaption = `N° 00${index + 1} ${this.monstersNames[index]}`;
       monster.attackName = this.attacksNames[index];

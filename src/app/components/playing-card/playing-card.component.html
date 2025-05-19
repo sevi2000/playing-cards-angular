@@ -1,13 +1,13 @@
 <div id="card">
-    <div id="inside">
+    <div id="inside" [style.background-color] = "backgroundColor">
         <div id="header">
             <header>
                 <div class="left" >{{ monster.name }}</div>
                 <div class="right">{{ monster.hp }} HP</div>
-                <img style="width: 15px; height: 15px;" src="assets/type/electric.png"/>
+                <img style="width: 15px; height: 15px;" [src]="monsterTypeIcon"/>
             </header>
             <figure id="art">
-                <img src="assets/pik.jpg"/>
+                <img [src]="monster.image"/>
                 <figcaption>{{monster.figureCaption}}</figcaption>
             </figure>
             <div id="capacities">
