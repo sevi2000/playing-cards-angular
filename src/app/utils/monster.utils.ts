@@ -39,28 +39,28 @@ export const MonsterTypeProperties: {[key: string]:IMonsterProperties} = {
     color : `rgb(217,112,145)`
   },
   [MonsterType.FIGHT] : {
-    imageUrl:`assets/types/fight.png`,
+    imageUrl:`assets/type/fight.png`,
     color : `rgb(170,55,29)`
   },
   [MonsterType.FIRE] : {
-    imageUrl:`assets/types/fire.png`,
+    imageUrl:`assets/type/fire.png`,
     color : `rgb(196,47,46)`
   },
   [MonsterType.METAL] :{
 
-    imageUrl:`assets/types/metal.png`,
+    imageUrl:`assets/type/metal.png`,
     color : `rgb(158,149,134)`
   },
   [MonsterType.PLANT] :{
-    imageUrl:`assets/types/plant.png`,
+    imageUrl:`assets/type/plant.png`,
     color : `rgb(81,163,72)`
   },
   [MonsterType.PSYCH] :{
-    imageUrl:`assets/types/psych.png`,
+    imageUrl:`assets/type/psych.png`,
     color : `rgb(119,69,142)`
   },
   [MonsterType.WATER] :{
-    imageUrl:`assets/types/water.png`,
+    imageUrl:`assets/type/water.png`,
     color : `rgb(53,130,198)`
   }
 }
