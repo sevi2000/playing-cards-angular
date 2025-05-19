@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, CreateSignalOptions, signal, WritableSignal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { PlayingCardComponent } from "./components/playing-card/playing-card.component";
 import { Monster } from './models/monster.model';
@@ -15,7 +15,7 @@ import { MonsterType } from './utils/monster.utils';
 export class AppComponent {
 
   monsters!: Monster[];
-  selectedMonsterIndex: number = 0;
+  selectedMonsterIndex: WritableSignal<number> = signal(0);
   monsterTypes: MonsterType [] = [MonsterType.ELECTRIC,MonsterType.WATER,MonsterType.PLANT,MonsterType.FIRE]
   monstersNames : string[] = ["Pik" , "Car", "Bulb", "Sala"];
   attacksNames : string[] = ["Thunder Shock" , "Water Gun", "Vine Whip","Scratch"];
@@ -41,6 +41,6 @@ export class AppComponent {
   }
 
   toggleMonster () : void {
-    this.selectedMonsterIndex = (this.selectedMonsterIndex + 1) % this.monsters.length;
+  this.selectedMonsterIndex.set((this.selectedMonsterIndex() + 1) % this.monsters.length);
   }
 }
