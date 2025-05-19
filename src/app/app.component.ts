@@ -1,4 +1,4 @@
-import { Component, CreateSignalOptions, signal, WritableSignal } from '@angular/core';
+import { Component, computed, CreateSignalOptions, signal, WritableSignal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { PlayingCardComponent } from "./components/playing-card/playing-card.component";
 import { Monster } from './models/monster.model';
@@ -16,6 +16,9 @@ export class AppComponent {
 
   monsters!: Monster[];
   selectedMonsterIndex: WritableSignal<number> = signal(0);
+  selectedMonster = computed(()=> {
+    return this.monsters[this.selectedMonsterIndex()];
+  })
   monsterTypes: MonsterType [] = [MonsterType.ELECTRIC,MonsterType.WATER,MonsterType.PLANT,MonsterType.FIRE]
   monstersNames : string[] = ["Pik" , "Car", "Bulb", "Sala"];
   attacksNames : string[] = ["Thunder Shock" , "Water Gun", "Vine Whip","Scratch"];
