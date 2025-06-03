@@ -1,4 +1,8 @@
-<button (click)="toggleMonster()" >Toggle Monster</button>
-<div id="card-list">
-    <app-playing-card [monster]="selectedMonster()"></app-playing-card>
-</div>
+<nav>
+    <ul>
+        <li (click)="selectPage($event)">Acceuil</li>
+        <li (click)="selectPage($event)">Recherche</li>
+        <li (click)="selectPage($event)">Echange</li>
+    </ul>
+</nav>
+<router-outlet></router-outlet>

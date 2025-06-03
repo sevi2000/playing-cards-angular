@@ -1,7 +1,25 @@
-#card-list {
+ul {
+    all: unset;
+    list-style: none;
     display: flex;
-    gap:20px;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 2px;
+    border-radius: 10px;
+    vertical-align:middle;
+}
+li:hover, #selected {
+    background-color: rgba(255, 0, 0, .5);
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-decoration-color: red;
+}
+
+nav{
+    background-color: black;
+    color: white;
+}
+
+.selected {
+    ba
 }

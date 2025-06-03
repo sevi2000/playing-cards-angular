@@ -1,0 +1,4 @@
+<app-search-bar [(search)]="search"></app-search-bar>
+<div class="card-list">
+    <app-playing-card *ngFor="let monster of filteredMonsters()" [monster]="monster" ></app-playing-card>
+</div>
